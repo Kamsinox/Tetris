@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
     public SwitchSceneManager menuManager;
     private UniversalInput universalInput;
 
+    public RandomBackground background;
+
     private bool firsttime = true;
 
     private void Awake()

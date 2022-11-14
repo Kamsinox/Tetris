@@ -31,7 +31,6 @@ namespace Tomino
             if(PlayerPrefs.GetInt("maxscore") < Value)
             {
                 PlayerPrefs.SetInt("maxscore",Value);
-                Debug.Log("Zapisany wynik to: " + PlayerPrefs.GetInt("maxscore"));
                 PlayerPrefs.Save();
             }
         }
@@ -50,7 +49,6 @@ namespace Tomino
             if(PlayerPrefs.GetInt("maxtetris") < Tetris)
             {
                 PlayerPrefs.SetInt("maxtetris", Tetris);
-                Debug.Log("Zapisany wynik tetrisów to: " + PlayerPrefs.GetInt("maxtetris"));
                 PlayerPrefs.Save();
             }
         }

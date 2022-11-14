@@ -9,8 +9,18 @@ public class BoardView : MonoBehaviour
     }
 
     public GameObject blockPrefab;
-    public Sprite[] blockSprites;
-    public Sprite shadowBlockSprite;
+
+    [System.Serializable]
+    public class BlockSprites
+    {   
+        public int chosenSet;
+        public Sprite[] blockSprites;
+        public Sprite shadowBlockSprite;
+    }
+
+    [SerializeField]
+    public BlockSprites[] blockSpritesClass;
+
     public TouchInput touchInput = new TouchInput();
 
     Board gameBoard;
@@ -45,7 +55,7 @@ public class BoardView : MonoBehaviour
     {
         foreach (var position in gameBoard.GetPieceShadow())
         {
-            RenderBlock(shadowBlockSprite, position, Layer.PieceShadow);
+            RenderBlock(blockSpritesClass[PlayerPrefs.GetInt("setofblocks")].shadowBlockSprite, position, Layer.PieceShadow);
         }
     }
 
@@ -96,7 +106,7 @@ public class BoardView : MonoBehaviour
 
     public Sprite BlockSprite(PieceType type)
     {
-        return blockSprites[(int)type];
+        return blockSpritesClass[PlayerPrefs.GetInt("setofblocks")].blockSprites[(int)type];
     }
 
     public Vector3 PivotOffset()

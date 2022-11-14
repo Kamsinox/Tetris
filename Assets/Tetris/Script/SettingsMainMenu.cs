@@ -10,6 +10,7 @@ public class SettingsMainMenu : MonoBehaviour
     public AudioPlayer audioPlayer;
     public TextMeshProUGUI clearHisotryText;
 
+    private int chosenSet;
 
     void Start()
     {
@@ -35,8 +36,6 @@ public class SettingsMainMenu : MonoBehaviour
     {
         musicToggle.isOn = Settings.MusicEnabled;
         soundToggle.isOn = Settings.SoundEnabled;
-        Debug.Log("Ustawienia: " + Settings.MusicEnabled + ", i dzwiek: "+ Settings.SoundEnabled);
-        Debug.Log("Score: "+ PlayerPrefs.GetInt("maxscore"));
     }
 
     private void PlayToggleAudioClip(bool enabled)
