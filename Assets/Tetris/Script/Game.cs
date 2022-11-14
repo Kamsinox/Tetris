@@ -76,6 +76,7 @@ namespace Tomino
             elapsedTime = 0;
             Score = new Score();
             Level = new Level();
+            Score.Tetris = 0;
             board.RemoveAllBlocks();
             AddPiece();
         }
@@ -115,6 +116,10 @@ namespace Tomino
                 isPlaying = false;
                 PausedEvent();
                 FinishedEvent();
+                Score.saveScore();
+                Score.saveTetrisScore();
+                Level.saveLinesCount();
+                Level.saveLevelCount();
             }
         }
 

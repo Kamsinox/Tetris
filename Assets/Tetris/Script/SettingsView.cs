@@ -42,6 +42,7 @@ public class SettingsView : MonoBehaviour
 
         screenButtonsToggle.isOn = Settings.ScreenButonsEnabled;
         screenButtonsToggle.GetComponentInChildren<Text>().text = Constant.Text.ScreenButtons;
+        screenButtonsToggle.GetComponentInChildren<Text>().font = fontType;
         screenButtonsToggle.onValueChanged.AddListener((enabled) =>
         {
             Settings.ScreenButonsEnabled = enabled;

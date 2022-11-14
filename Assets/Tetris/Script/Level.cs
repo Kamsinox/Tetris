@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Tomino
 {
@@ -11,5 +12,23 @@ namespace Tomino
         public int Lines { get; private set; }
 
         public void RowsCleared(int count) => Lines += count;
+
+        public void saveLinesCount()
+        {
+            if(PlayerPrefs.GetInt("maxlines") < Lines)
+            {
+                PlayerPrefs.SetInt("maxlines", Lines);
+                PlayerPrefs.Save();
+            }
+        }
+
+        public void saveLevelCount()
+        {
+            if(PlayerPrefs.GetInt("maxlevel") < Number)
+            {
+                PlayerPrefs.SetInt("maxlevel", Number);
+                PlayerPrefs.Save();
+            }
+        }
     }
 }

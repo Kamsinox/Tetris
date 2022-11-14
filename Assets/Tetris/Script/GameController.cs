@@ -20,17 +20,16 @@ public class GameController : MonoBehaviour
     public SwitchSceneManager menuManager;
     private UniversalInput universalInput;
 
+    private bool firsttime = true;
+
     private void Awake()
     {
         HandlePlayerSettings();
         Settings.ChangedEvent += HandlePlayerSettings;
     }
 
-
-
     void Start()
     {
-        menuManager.loadMainMenu();
         Board board = new Board(10, 20);
 
         boardView.SetBoard(board);
@@ -47,6 +46,13 @@ public class GameController : MonoBehaviour
 
         scoreView.game = game;
         levelView.game = game;
+        game.Pause();
+    }
+
+    public void resumeGame()
+    {
+        if(firsttime) game.Resume();
+        firsttime = false;
     }
 
     public void OnPauseButtonTap()
@@ -84,6 +90,7 @@ public class GameController : MonoBehaviour
     {
         alertView.SetTitle(Constant.Text.GameFinished);
         alertView.AddButton(Constant.Text.PlayAgain, game.Start, audioPlayer.PlayNewGameClip);
+        alertView.AddButton(Constant.Text.MainMenu, menuManager.loadMainMenu, audioPlayer.PlayNewGameClip);
         alertView.Show();
     }
 
@@ -112,6 +119,9 @@ public class GameController : MonoBehaviour
         screenButtons.SetActive(Settings.ScreenButonsEnabled);
         boardView.touchInput.Enabled = !Settings.ScreenButonsEnabled;
         musicAudioSource.gameObject.SetActive(Settings.MusicEnabled);
-        soundAudioSource.gameObject.SetActive(Settings.SoundEnabled);
+
+        //sound effect on/off
+        if(Settings.SoundEnabled) soundAudioSource.GetComponent<AudioSource>().mute = false;
+        else soundAudioSource.GetComponent<AudioSource>().mute = true;
     }
 }
