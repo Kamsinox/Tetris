@@ -3,9 +3,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-/// <summary>
-/// A button that sends an event when it pressed or pressed and held.
-/// </summary>
 public class PushButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     /// <summary>
