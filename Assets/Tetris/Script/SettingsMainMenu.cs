@@ -12,7 +12,7 @@ public class SettingsMainMenu : MonoBehaviour
 
     private int chosenSet;
 
-    void Start()
+    void Update()
     {
         checkPlayerPrefs();
     }

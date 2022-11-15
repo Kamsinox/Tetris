@@ -16,6 +16,7 @@ public class RandomBackground : MonoBehaviour
     private int randomNumber()
     {
         int chosenId = Random.Range(0,backgrounds.Length);
+        Debug.Log("Wybrany sprite: "+ chosenId);
         return chosenId;
     }
 }

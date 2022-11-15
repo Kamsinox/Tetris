@@ -7209,6 +7209,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 391195523}
+        m_TargetAssemblyTypeName: RandomBackground, Assembly-CSharp
+        m_MethodName: chooseBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 328141098}
         m_TargetAssemblyTypeName: SwitchSceneManager, Assembly-CSharp
         m_MethodName: loadMainGame
@@ -10319,13 +10331,13 @@ MonoBehaviour:
       type: 3}
   - chosenSet: 2
     blockSprites:
-    - {fileID: 21300000, guid: 3f82b3ad9020ed3448c74b89545d893c, type: 3}
     - {fileID: 21300000, guid: 774fa586ba243f54f92bce708ecb917b, type: 3}
-    - {fileID: 21300000, guid: 3e2fc5b3b3411a94d990b263cc821a0a, type: 3}
+    - {fileID: 21300000, guid: 3f82b3ad9020ed3448c74b89545d893c, type: 3}
     - {fileID: 21300000, guid: 35a3a47936e735945aca498f718eaef4, type: 3}
+    - {fileID: 21300000, guid: 019e0880cb7a5b04e9397e93cddcc382, type: 3}
+    - {fileID: 21300000, guid: 3e2fc5b3b3411a94d990b263cc821a0a, type: 3}
     - {fileID: 21300000, guid: 51a1485338acae84585e3ea525804668, type: 3}
     - {fileID: 21300000, guid: b109e0a46ebdde140abbe8ffe76f424c, type: 3}
-    - {fileID: 21300000, guid: 019e0880cb7a5b04e9397e93cddcc382, type: 3}
     shadowBlockSprite: {fileID: 21300000, guid: de0f4de3209ba2c42874afb3c5329c15,
       type: 3}
 --- !u!1 &1648964647
@@ -13347,14 +13359,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockPrefab: {fileID: 1946527347529550, guid: 262ceda6c78e44f29bdcadd59e8c7cc5,
     type: 3}
-  blockSprites:
-  - {fileID: 21300000, guid: 2b04b070b759942bf99614a1e6cf610d, type: 3}
-  - {fileID: 21300000, guid: 4ecb7f2281bc64a3b8a4147ae3c6e5b6, type: 3}
-  - {fileID: 21300000, guid: 69fe660da071d4322aa70e29712528c9, type: 3}
-  - {fileID: 21300000, guid: 6127214068f4f4f6ea12fe39edc4c461, type: 3}
-  - {fileID: 21300000, guid: b4e95d9d195ad4cb39c8c25fa6408a18, type: 3}
-  - {fileID: 21300000, guid: 2e6bd5509a3b1475d9ea8f11481a7c57, type: 3}
-  - {fileID: 21300000, guid: 27630e5701be3434a9d631b8fb12fab7, type: 3}
+  blockSpritesViewClass:
+  - chosenSetView: 0
+    blockSpritesView:
+    - {fileID: 21300000, guid: 2b04b070b759942bf99614a1e6cf610d, type: 3}
+    - {fileID: 21300000, guid: 4ecb7f2281bc64a3b8a4147ae3c6e5b6, type: 3}
+    - {fileID: 21300000, guid: 69fe660da071d4322aa70e29712528c9, type: 3}
+    - {fileID: 21300000, guid: 6127214068f4f4f6ea12fe39edc4c461, type: 3}
+    - {fileID: 21300000, guid: b4e95d9d195ad4cb39c8c25fa6408a18, type: 3}
+    - {fileID: 21300000, guid: 2e6bd5509a3b1475d9ea8f11481a7c57, type: 3}
+    - {fileID: 21300000, guid: 27630e5701be3434a9d631b8fb12fab7, type: 3}
+  - chosenSetView: 1
+    blockSpritesView:
+    - {fileID: 21300000, guid: 774fa586ba243f54f92bce708ecb917b, type: 3}
+    - {fileID: 21300000, guid: 3f82b3ad9020ed3448c74b89545d893c, type: 3}
+    - {fileID: 21300000, guid: 35a3a47936e735945aca498f718eaef4, type: 3}
+    - {fileID: 21300000, guid: 019e0880cb7a5b04e9397e93cddcc382, type: 3}
+    - {fileID: 21300000, guid: 3e2fc5b3b3411a94d990b263cc821a0a, type: 3}
+    - {fileID: 21300000, guid: 51a1485338acae84585e3ea525804668, type: 3}
+    - {fileID: 21300000, guid: b109e0a46ebdde140abbe8ffe76f424c, type: 3}
   container: {fileID: 1291738416}
 --- !u!114 &2001834798
 MonoBehaviour:

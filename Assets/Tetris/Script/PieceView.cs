@@ -4,7 +4,17 @@ using Tomino;
 public class PieceView : MonoBehaviour
 {
     public GameObject blockPrefab;
-    public Sprite[] blockSprites;
+
+    [System.Serializable]
+    public class BlockSpritesView
+    {
+        public int chosenSetView;
+        public Sprite[] blockSpritesView;
+    }
+
+    [SerializeField]
+    public BlockSpritesView[] blockSpritesViewClass;
+
     public RectTransform container;
 
     private Board board;
@@ -82,6 +92,6 @@ public class PieceView : MonoBehaviour
 
     public Sprite BlockSprite(PieceType type)
     {
-        return blockSprites[(int)type];
+        return blockSpritesViewClass[PlayerPrefs.GetInt("setofblocks")].blockSpritesView[(int)type];
     }
 }

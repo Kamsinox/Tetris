@@ -16,6 +16,12 @@ public class SettingsView : MonoBehaviour
 
     private UnityAction onCloseCallback;
 
+    void Update()
+    {
+        musicToggle.isOn = Settings.MusicEnabled;
+        soundToggle.isOn = Settings.SoundEnabled;
+    }
+
     private void Awake()
     {
         titleText.text = Constant.Text.Settings;
